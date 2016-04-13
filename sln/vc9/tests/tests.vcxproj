@@ -108,13 +108,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\test\test_HashTable.cpp" />
     <ClCompile Include="..\..\..\test\test_list.cpp" />
     <ClCompile Include="..\..\..\test\test_main.cpp" />
     <ClCompile Include="..\..\..\test\test_monom.cpp" />
     <ClCompile Include="..\..\..\test\test_node_table.cpp" />
     <ClCompile Include="..\..\..\test\test_polinom.cpp" />
     <ClCompile Include="..\..\..\test\test_SortedTable.cpp" />
-    <ClCompile Include="test_HashTable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

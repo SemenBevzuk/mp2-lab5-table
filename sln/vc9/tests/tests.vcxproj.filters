@@ -25,7 +25,7 @@
     <ClCompile Include="..\..\..\test\test_SortedTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test_HashTable.cpp">
+    <ClCompile Include="..\..\..\test\test_HashTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
