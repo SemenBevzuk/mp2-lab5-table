@@ -1,6 +1,5 @@
 #include "table.h"
 
-//SortedTable
 int SortedTable::GetCountData() {
 	return count_data;
 }

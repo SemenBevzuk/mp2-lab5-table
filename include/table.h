@@ -3,7 +3,7 @@
 #include "polinom.h"
 #include <string>
 #include <list>
-#include <vector>
+
 using namespace std;
 
 class NodeTable
@@ -65,4 +65,56 @@ public:
 	void Insert(string key, Polinom *p);
 	void Delete(string key);
 	Polinom* GetNode(string key);
+};
+
+class BinarySearchTree_Element
+{
+private:
+	NodeTable* data;
+	BinarySearchTree_Element* left;
+	BinarySearchTree_Element* right;
+public:
+	BinarySearchTree_Element(NodeTable* d);
+	BinarySearchTree_Element();
+	BinarySearchTree_Element(BinarySearchTree_Element &obj);
+
+	BinarySearchTree_Element* GetLeft() const;
+	BinarySearchTree_Element* GetRight() const;
+
+	void SetData(NodeTable* d);
+	void SetLeft(BinarySearchTree_Element* l);
+	void SetRight(BinarySearchTree_Element* r);
+
+	string GetName() const;
+	NodeTable* GetData();
+};
+
+class BinarySearchTree
+{
+private:
+	BinarySearchTree_Element* root;
+
+	BinarySearchTree_Element* Search(BinarySearchTree_Element* r, string key);
+
+	BinarySearchTree_Element* FindMax(BinarySearchTree_Element* r);
+	BinarySearchTree_Element* FindMin(BinarySearchTree_Element* r);
+
+	BinarySearchTree_Element* FindNext(BinarySearchTree_Element* r);
+	BinarySearchTree_Element* FindPrevious(BinarySearchTree_Element* r);
+
+	void Insert(BinarySearchTree_Element* r, BinarySearchTree_Element* new_node);
+	
+	void Delete(BinarySearchTree_Element* r, string key);
+
+	BinarySearchTree_Element* Merge(BinarySearchTree_Element* l, BinarySearchTree_Element* r);
+
+public:
+	BinarySearchTree();
+	BinarySearchTree(NodeTable* data);
+	void TLRwalk(BinarySearchTree_Element* r);//печать
+	void LTRwalk(BinarySearchTree_Element* r);//копирование
+	
+	void Insert(NodeTable* node);
+	void Delete(string key);
+	NodeTable* Search(string key);
 };

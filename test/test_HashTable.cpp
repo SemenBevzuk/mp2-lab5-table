@@ -49,10 +49,13 @@ TEST(TableHash, can_delete) {
 
 TEST(TableHash, can_delete_2) {
 	HashTable t;
-	Polinom p;
+	Polinom p,d;
 	p.AddElement(monom(1, 100));
+	d.AddElement(monom(2, 200));
 	t.Insert("a", &p);
+	t.Insert("b", &d);
 	t.Delete("a");
 	EXPECT_EQ(NULL, t.GetNode("a"));
+	EXPECT_EQ(2, t.GetNode("b")->operator[](0).GetCoefficient());
 }
 

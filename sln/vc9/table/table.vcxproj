@@ -17,6 +17,7 @@
     <ClCompile Include="..\..\..\src\nodetable.cpp" />
     <ClCompile Include="..\..\..\src\SortedTable.cpp" />
     <ClCompile Include="..\..\..\src\tablehash.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{DC6F08F6-1BD1-487F-820E-B5F4121F75C4}</ProjectGuid>
