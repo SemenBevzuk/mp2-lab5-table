@@ -58,3 +58,39 @@ TEST(BinarySearchTree, can_delete) {
 	test.Delete("a");
 	EXPECT_EQ(NULL, test.Search("a"));
 }
+
+TEST(BinarySearchTree, can_delete_2) {
+	BinarySearchTree test;
+	Polinom p, d;
+	p.AddElement(monom(1, 100));
+	d.AddElement(monom(2, 200));
+	test.Insert(new NodeTable("a", &p));
+	test.Insert(new NodeTable("b", &d));
+	test.Delete("b");
+	EXPECT_EQ("a", test.Search("a")->GetKey());
+	EXPECT_EQ(NULL, test.Search("b"));
+	test.Delete("a");
+	EXPECT_EQ(NULL, test.Search("a"));
+	EXPECT_EQ(NULL, test.Search("b"));
+}
+
+TEST(BinarySearchTree, can_delete_whith_left_and_right) {
+	BinarySearchTree test;
+	Polinom p, d, u, v;
+	p.AddElement(monom(1, 100));
+	d.AddElement(monom(2, 200));
+	u.AddElement(monom(3, 300));
+	v.AddElement(monom(4, 400));
+	test.Insert(new NodeTable("b", &d));
+	test.Insert(new NodeTable("a", &p));
+	test.Insert(new NodeTable("c", &u));
+	test.Insert(new NodeTable("d", &v));
+	test.Delete("b");
+	EXPECT_EQ(NULL, test.Search("b"));
+	test.Delete("a");
+	EXPECT_EQ(NULL, test.Search("a"));
+	test.Delete("c");
+	EXPECT_EQ(NULL, test.Search("c"));
+	test.Delete("d");
+	EXPECT_EQ(NULL, test.Search("d"));
+}

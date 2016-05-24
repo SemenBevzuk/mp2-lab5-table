@@ -99,8 +99,8 @@ private:
 	BinarySearchTree_Element* FindMax(BinarySearchTree_Element* r);
 	BinarySearchTree_Element* FindMin(BinarySearchTree_Element* r);
 
-	BinarySearchTree_Element* FindNext(BinarySearchTree_Element* r);
-	BinarySearchTree_Element* FindPrevious(BinarySearchTree_Element* r);
+	/*BinarySearchTree_Element* FindNext(BinarySearchTree_Element* r);
+	BinarySearchTree_Element* FindPrevious(BinarySearchTree_Element* r);*/
 
 	void Insert(BinarySearchTree_Element* r, BinarySearchTree_Element* new_node);
 	
@@ -111,8 +111,8 @@ private:
 public:
 	BinarySearchTree();
 	BinarySearchTree(NodeTable* data);
-	void TLRwalk(BinarySearchTree_Element* r);//печать
-	void LTRwalk(BinarySearchTree_Element* r);//копирование
+	/*void TLRwalk(BinarySearchTree_Element* r);
+	void LTRwalk(BinarySearchTree_Element* r);*/
 	
 	void Insert(NodeTable* node);
 	void Delete(string key);

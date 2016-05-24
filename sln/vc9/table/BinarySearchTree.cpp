@@ -59,21 +59,21 @@ BinarySearchTree::BinarySearchTree(NodeTable* data) {
 	root->SetData(data);
 }
 
-void BinarySearchTree::TLRwalk(BinarySearchTree_Element* r) {
-	if (r != NULL) {
-		cout << r->GetName() << " ";
-		TLRwalk(r->GetLeft());
-		TLRwalk(r->GetRight());
-	}
-}
-
-void BinarySearchTree::LTRwalk(BinarySearchTree_Element* r) {
-	if (r != NULL) {
-		TLRwalk(r->GetLeft());
-		TLRwalk(r->GetRight());
-		cout << r->GetName() << " ";
-	}
-}
+//void BinarySearchTree::TLRwalk(BinarySearchTree_Element* r) {
+//	if (r != NULL) {
+//		cout << r->GetName() << " ";
+//		TLRwalk(r->GetLeft());
+//		TLRwalk(r->GetRight());
+//	}
+//}
+//
+//void BinarySearchTree::LTRwalk(BinarySearchTree_Element* r) {
+//	if (r != NULL) {
+//		TLRwalk(r->GetLeft());
+//		TLRwalk(r->GetRight());
+//		cout << r->GetName() << " ";
+//	}
+//}
 
 void BinarySearchTree::Insert(NodeTable* node)
 {
@@ -159,16 +159,20 @@ void BinarySearchTree::Insert(BinarySearchTree_Element* r, BinarySearchTree_Elem
 	if (new_node->GetName() > r->GetName()) {
 		if (r->GetRight() != NULL) {
 			Insert(r->GetRight(), new_node);
+			return;
 		}
 		else {
 			r->SetRight(new_node);
+			return;//
 		}
 	}
 	if (r->GetLeft() != NULL) {
 		Insert(r->GetLeft(), new_node);
+		return;//
 	}
 	else {
 		r->SetLeft(new_node);
+		return;//
 	}
 }
 
